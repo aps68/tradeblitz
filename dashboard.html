@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="TradeBlitz - The ultimate AI trading superapp. Execute with precision, manage risk, journal smarter, and master psychology.">
+    <title>TradeBlitz Dashboard | Your Member Area</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="grid-overlay"></div>
+
+    <nav id="navbar" class="scrolled">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">TradeBlitz Dashboard</span>
+            </div>
+            <div class="nav-links">
+                <a href="prep.html">Daily Prep</a>
+                <a href="execute.html">Execute</a>
+                <a href="journal.html">Journal</a>
+                <a href="tradingclass.html">Trading Class</a>
+                <a href="chat.html">AI Chat</a>
+            </div>
+            <a href="index.html" class="btn-nav">Log Out</a>
+        </div>
+    </nav>
+
+    <section class="routine-section" id="routine" style="padding-top: 10rem;">
+        <div class="container">
+            <h2 class="section-title">Your Daily Trading Routine, Reinvented</h2>
+            <p class="section-subtitle">From pre-market prep to post-session review, TradeBlitz keeps your trading day
+                structured, disciplined, and in flow.</p>
+
+            <div class="tab-container glass-panel">
+                <div class="tab-header">
+                    <button class="tab-btn active" data-tab="prep">PREP</button>
+                    <button class="tab-btn" data-tab="execute">EXECUTE</button>
+                    <button class="tab-btn" data-tab="journal">JOURNAL</button>
+                    <button class="tab-btn" data-tab="ai">AI SUPPORT</button>
+                </div>
+
+                <div class="tab-body">
+                    <!-- Tab Content 1 -->
+                    <div class="tab-content active" id="tab-prep">
+                        <div class="tab-info">
+                            <h3>Start With Clarity, Not Chaos</h3>
+                            <p>Set your daily bias, review economic news, and run through your pre-market checklist.
+                                Never enter a session scattered or reactive.</p>
+                            <ul class="feature-list">
+                                <li><span>✨</span> Review High-Impact News</li>
+                                <li><span>✨</span> Set Daily Bias & Levels</li>
+                                <li><span>✨</span> Pre-market Checklist</li>
+                            </ul>
+                        </div>
+                        <div class="tab-image">
+                            <div class="glass-box mockup">
+                                <div class="mockup-header">Pre-Market Routine 🌞</div>
+                                <div class="mockup-task"><span class="check">◻</span> Check CPI Data (8:30 AM)</div>
+                                <div class="mockup-task"><span class="check">◻</span> Mark Liquidity Zones</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Content 2 -->
+                    <div class="tab-content" id="tab-execute">
+                        <div class="tab-info">
+                            <h3>Execute With Precision</h3>
+                            <p>Enter and exit trades seamlessly. Watch the app automatically calculate risk and position
+                                sizing instantly.</p>
+                            <ul class="feature-list">
+                                <li><svg width="20" height="20" viewBox="0 0 24 24" fill="#f97316" stroke="#f97316"
+                                        stroke-linejoin="round" stroke-linecap="round">
+                                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                                    </svg> Auto Position Sizing</li>
+                            </ul>
+                        </div>
+                        <div class="tab-image">
+                            <div class="glass-box mockup">
+                                <div class="mockup-header text-green"
+                                    style="display: flex; align-items: center; justify-content: space-between;">Execute
+                                    Trade <svg width="20" height="20" viewBox="0 0 24 24" fill="#f97316"
+                                        stroke="#f97316" stroke-linejoin="round" stroke-linecap="round">
+                                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                                    </svg></div>
+                                <div class="mockup-task">Risk: 1% ($10000)</div>
+                                <div class="mockup-task">SL Points: 12 pts</div>
+                                <div class="mockup-task">Size: 0.08 Lots</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Content 4 -->
+                    <div class="tab-content" id="tab-journal">
+                        <div class="tab-info">
+                            <h3>Trade Journal 📖</h3>
+                            <p>Log your trades, document your setups, and track your psychology.</p>
+                        </div>
+                        <div class="tab-image">
+                            <div class="glass-box mockup" style="padding: 1.5rem; background: #0b0d17;">
+                                <div
+                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                                    <div
+                                        style="font-weight: 800; color: #fff; font-size: 1.2rem; display: flex; align-items: center; gap: 0.5rem;">
+                                        <span style="font-size: 1.5rem;">📊</span> Recent Logs
+                                    </div>
+                                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                                        <div
+                                            style="background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.4); padding: 0.3rem 0.6rem; border-radius: 6px; font-weight: 700; font-size: 0.75rem;">
+                                            📥 Save CSV</div>
+                                        <div
+                                            style="color: #64748b; font-size: 0.75rem; background: #12141f; padding: 0.3rem 0.6rem; border-radius: 6px;">
+                                            Total: <strong style="color:#fff;">1</strong></div>
+                                    </div>
+                                </div>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                    <div
+                                        style="background: #12141f; padding: 1.2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); text-align: center;">
+                                        <div
+                                            style="color: #94a3b8; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.8rem;">
+                                            Win Rate</div>
+                                        <div
+                                            style="width: 80px; height: 80px; border-radius: 50%; border: 6px solid #10b981; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: inset 0 0 10px rgba(16,185,129,0.2);">
+                                            <span style="color: #fff; font-weight: 800; font-size: 1.3rem;">100%</span>
+                                        </div>
+                                    </div>
+                                    <div
+                                        style="background: #12141f; padding: 1.2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center; gap: 0.8rem;">
+                                        <div style="display: flex; justify-content: space-between;"><span
+                                                style="color: #94a3b8; font-size: 0.75rem; font-weight: 700;">TOTAL
+                                                TRADES</span><span
+                                                style="color: #fff; font-weight: 800; font-size: 0.9rem;">1</span></div>
+                                        <div style="display: flex; justify-content: space-between;"><span
+                                                style="color: #94a3b8; font-size: 0.75rem; font-weight: 700;">TOTAL
+                                                P&L</span><span
+                                                style="color: #10b981; font-weight: 800; font-size: 0.9rem;">+$100.00</span>
+                                        </div>
+                                        <div style="display: flex; justify-content: space-between;"><span
+                                                style="color: #94a3b8; font-size: 0.75rem; font-weight: 700;">WINS /
+                                                LOSSES</span><span
+                                                style="color: #fff; font-weight: 600; font-size: 0.9rem;"><span
+                                                    style="color:#10b981">1</span> / <span
+                                                    style="color:#ef4444">0</span></span></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Equity Curve Mockup -->
+                            <div class="glass-box mockup"
+                                style="padding: 1.5rem; background: #0b0d17; margin-top: 1rem;">
+                                <h4
+                                    style="color: #94a3b8; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem;">
+                                    CUMULATIVE P&L (EQUITY CURVE)</h4>
+                                <div
+                                    style="position: relative; height: 180px; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.05); border-left: 1px solid rgba(255,255,255,0.05);">
+                                    <!-- Y-Axis Labels -->
+                                    <div
+                                        style="position: absolute; left: -35px; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: space-between; color: #64748b; font-size: 0.65rem; padding-right: 5px; text-align: right; width: 30px;">
+                                        <span>$100</span>
+                                        <span>$75</span>
+                                        <span>$50</span>
+                                        <span>$25</span>
+                                        <span>$0</span>
+                                    </div>
+
+                                    <!-- Grid Lines -->
+                                    <div
+                                        style="position: absolute; top: 25%; left: 0; right: 0; border-bottom: 1px dashed rgba(255,255,255,0.05);">
+                                    </div>
+                                    <div
+                                        style="position: absolute; top: 50%; left: 0; right: 0; border-bottom: 1px dashed rgba(255,255,255,0.05);">
+                                    </div>
+                                    <div
+                                        style="position: absolute; top: 75%; left: 0; right: 0; border-bottom: 1px dashed rgba(255,255,255,0.05);">
+                                    </div>
+
+                                    <!-- The Chart Line SVG -->
+                                    <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none"
+                                        style="position: relative; z-index: 2;">
+                                        <!-- Gradient Fill for Area under curve -->
+                                        <defs>
+                                            <linearGradient id="chartGradientMockup" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stop-color="rgba(59, 130, 246, 0.4)" />
+                                                <stop offset="100%" stop-color="rgba(59, 130, 246, 0)" />
+                                            </linearGradient>
+                                        </defs>
+
+                                        <!-- Area path -->
+                                        <path d="M0,100 L0,100 L100,0 L100,100 Z" fill="url(#chartGradientMockup)">
+                                        </path>
+                                        <!-- Line path -->
+                                        <path d="M0,100 L100,0" fill="none" stroke="#3b82f6" stroke-width="2"></path>
+
+                                        <!-- Data Points -->
+                                        <circle cx="0" cy="100" r="2" fill="#0f111a" stroke="#3b82f6"
+                                            stroke-width="1.5"></circle>
+                                        <circle cx="100" cy="0" r="2" fill="#0f111a" stroke="#3b82f6"
+                                            stroke-width="1.5"></circle>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Content - AI Support -->
+                    <div class="tab-content" id="tab-ai">
+                        <div class="tab-info" style="padding-top: 1rem;">
+                            <h3 style="font-size: 2.8rem; letter-spacing: -1px; margin-bottom: 1rem;">TradeBlitz AI Support 🤖</h3>
+                            <p style="font-size: 1.15rem; color: #94a3b8; line-height: 1.6; max-width: 450px;">Struggling with a setup? Mindset getting foggy? Talk to your personal trading assistant.</p>
+                        </div>
+                        <div class="tab-image">
+                            <div class="glass-box mockup" style="padding: 2rem; background: #0b0d17; display: flex; flex-direction: column; gap: 2rem; border: 1px solid rgba(59, 130, 246, 0.2); box-shadow: 0 0 20px rgba(59, 130, 246, 0.05);">
+                                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                                    <div style="font-size: 1.5rem; background: rgba(59, 130, 246, 0.2); padding: 0.5rem; border-radius: 50%;">🤖</div>
+                                    <div style="background: #12141f; padding: 1rem 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); color: #e2e8f0; font-size: 0.95rem; line-height: 1.5; border-top-left-radius: 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                        Hello! I am TradeBlitz AI. I am here to help you analyze your setups and master your trading psychology. Notice your emotions shifting? Fire away!
+                                    </div>
+                                </div>
+                                <div style="display: flex; gap: 1rem; align-items: flex-start; flex-direction: row-reverse;">
+                                    <div style="font-size: 1.5rem; background: rgba(245, 158, 11, 0.2); padding: 0.5rem; border-radius: 50%;">👤</div>
+                                    <div style="background: rgba(59, 130, 246, 0.15); padding: 1rem 1.5rem; border-radius: 12px; border: 1px solid rgba(59, 130, 246, 0.3); color: #e2e8f0; font-size: 0.95rem; line-height: 1.5; border-top-right-radius: 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                        I just took two big losses in a row and I want to double my size. What should I do?
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" style="padding-top: 2rem;">
+        <div class="container text-center">
+            <h2 style="margin-bottom: 1rem;">Welcome to the Members Area</h2>
+            <p style="color: var(--text-muted);">You now have full access to your personalized daily routine and
+                resources.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="brand">
+                <span class="logo-text">TradeBlitz</span>
+                <p>The OS for peak performance traders.</p>
+            </div>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="#" onclick="event.preventDefault(); document.getElementById('adminModal').style.display='flex'">Admin</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 TradeBlitz. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Admin Login Modal -->
+    <div id="adminModal"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(5px);">
+        <div class="glass-panel"
+            style="background: #0b0d17; padding: 2.5rem; border-radius: 16px; width: 100%; max-width: 400px; border-top: 4px solid #f59e0b; position: relative;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h3 style="color: #fff; font-family: var(--font-heading); font-size: 1.5rem; margin: 0;">Admin Login
+                </h3>
+                <button onclick="document.getElementById('adminModal').style.display='none'"
+                    style="background: transparent; border: none; color: #64748b; font-size: 2rem; cursor: pointer; padding: 0; line-height: 1;">&times;</button>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <label style="color: #94a3b8; font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">Admin
+                    ID</label>
+                <input type="email" id="adminId" placeholder="Admin ID"
+                    style="width: 100%; padding: 1rem; background: #05060a; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; margin-top: 0.5rem; outline: none; box-sizing: border-box;">
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <label
+                    style="color: #94a3b8; font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">Password</label>
+                <input type="password" id="adminPass" placeholder="Password"
+                    style="width: 100%; padding: 1rem; background: #05060a; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; margin-top: 0.5rem; outline: none; box-sizing: border-box;">
+            </div>
+
+            <button onclick="adminLogin()"
+                style="width: 100%; background: #f59e0b; color: #000; font-weight: 800; border: none; padding: 1.2rem; border-radius: 8px; cursor: pointer; text-transform: uppercase; letter-spacing: 1px;">Access
+                Dashboard</button>
+            <div id="adminError"
+                style="color: #ef4444; font-size: 0.85rem; margin-top: 1rem; text-align: center; display: none;">Invalid
+                ID or Password.</div>
+        </div>
+    </div>
+
+    <script>
+        function adminLogin() {
+            const id = document.getElementById('adminId').value.trim();
+            const pass = document.getElementById('adminPass').value.trim();
+
+            if (id === 'akshaypayakkal@gmail.com' && pass === '111198125') {
+                window.location.href = 'admin.html';
+            } else {
+                document.getElementById('adminError').style.display = 'block';
+            }
+        }
+    </script>
+
+    <!-- Ambient BGM Player -->
+    <audio id="bgmAudio" loop preload="auto">
+        <source src="background.mp3" type="audio/mpeg">
+    </audio>
+    <button id="bgmToggle" title="Toggle Ambient Music" style="position: fixed; bottom: 20px; left: 20px; z-index: 9999; background: rgba(11, 13, 23, 0.8); border: 1px solid rgba(255,255,255,0.1); padding: 12px; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(10px); transition: 0.3s; color: #64748b;">
+        <svg id="bgmIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line id="muteLine1" x1="23" y1="9" x2="17" y2="15"></line>
+            <line id="muteLine2" x1="17" y1="9" x2="23" y2="15"></line>
+        </svg>
+    </button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const audio = document.getElementById("bgmAudio");
+            const toggleBtn = document.getElementById("bgmToggle");
+            const icon = document.getElementById("bgmIcon");
+            
+            audio.volume = 0.4; // Default half volume
+
+            // Restore time & play state across pages
+            const savedTime = localStorage.getItem("tradeblitz_bgm_time");
+            const isPlaying = localStorage.getItem("tradeblitz_bgm_playing") === "true";
+            
+            if (savedTime) audio.currentTime = parseFloat(savedTime);
+
+            function setPlayingUI() {
+                icon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>';
+                toggleBtn.style.color = "#10b981";
+                toggleBtn.style.borderColor = "rgba(16, 185, 129, 0.3)";
+                toggleBtn.style.boxShadow = "0 0 10px rgba(16, 185, 129, 0.2)";
+            }
+            
+            function setMutedUI() {
+                icon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line>';
+                toggleBtn.style.color = "#ef4444";
+                toggleBtn.style.borderColor = "rgba(239, 68, 68, 0.3)";
+                toggleBtn.style.boxShadow = "none";
+            }
+
+            if (isPlaying) {
+                // Browsers might block this, but we try
+                audio.play().then(() => setPlayingUI()).catch(e => setMutedUI());
+            } else {
+                setMutedUI();
+            }
+            
+            // Save time continuously so jumping pages feels seamless
+            setInterval(() => {
+                if (!audio.paused) {
+                    localStorage.setItem("tradeblitz_bgm_time", audio.currentTime);
+                }
+            }, 1000);
+            
+            toggleBtn.addEventListener("click", () => {
+                if (audio.paused) {
+                    audio.play();
+                    setPlayingUI();
+                    localStorage.setItem("tradeblitz_bgm_playing", "true");
+                } else {
+                    audio.pause();
+                    setMutedUI();
+                    localStorage.setItem("tradeblitz_bgm_playing", "false");
+                }
+            });
+            
+            // Try playing anyway on first interaction if they left it playing
+            document.body.addEventListener("click", () => {
+                if (localStorage.getItem("tradeblitz_bgm_playing") === "true" && audio.paused) {
+                    audio.play();
+                    setPlayingUI();
+                }
+            }, { once: true });
+        });
+    </script>
+</body>
+
+</html>

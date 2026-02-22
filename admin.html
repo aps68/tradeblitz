@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TradeBlitz Admin - Master Dashboard">
+    <title>Admin Dashboard | TradeBlitz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            color: #e2e8f0;
+            font-size: 0.95rem;
+        }
+
+        .admin-table th,
+        .admin-table td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .admin-table th {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: #94a3b8;
+            background: rgba(255, 255, 255, 0.02);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .admin-table tr:hover {
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .badge-win {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.75rem;
+        }
+
+        .badge-loss {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.75rem;
+        }
+
+        .badge-be {
+            background: rgba(148, 163, 184, 0.2);
+            color: #94a3b8;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="grid-overlay"></div>
+
+    <nav id="navbar" class="scrolled">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text" style="color: #f59e0b;">TradeBlitz Admin</span>
+            </div>
+            <div class="nav-links">
+                <a href="dashboard.html">Return to User view</a>
+            </div>
+            <a href="index.html" class="btn-nav">Log Out</a>
+        </div>
+    </nav>
+
+    <section class="routine-section" style="padding-top: 10rem; min-height: 100vh;">
+        <div class="container">
+            <h2 class="section-title">Master Oversight 👁️</h2>
+            <p class="section-subtitle">Real-time view of all student trades and performance metrics across the system.
+            </p>
+
+            <!-- Admin KPIs -->
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem;">
+                <div class="glass-panel" style="padding: 1.5rem; border-radius: 12px; background: #0b0d17;">
+                    <div style="color: #94a3b8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Total
+                        Students</div>
+                    <div id="statStudents" style="font-size: 2.5rem; font-weight: 800; color: #fff; line-height: 1.2;">0
+                    </div>
+                </div>
+                <div class="glass-panel" style="padding: 1.5rem; border-radius: 12px; background: #0b0d17;">
+                    <div style="color: #94a3b8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Total
+                        Trades Logged</div>
+                    <div id="statTrades" style="font-size: 2.5rem; font-weight: 800; color: #3b82f6; line-height: 1.2;">
+                        0</div>
+                </div>
+                <div class="glass-panel" style="padding: 1.5rem; border-radius: 12px; background: #0b0d17;">
+                    <div style="color: #94a3b8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Global
+                        Win Rate</div>
+                    <div id="statWinRate"
+                        style="font-size: 2.5rem; font-weight: 800; color: #10b981; line-height: 1.2;">0%</div>
+                </div>
+                <div class="glass-panel" style="padding: 1.5rem; border-radius: 12px; background: #0b0d17;">
+                    <div style="color: #94a3b8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">System
+                        Net P&L</div>
+                    <div id="statPnl" style="font-size: 2.5rem; font-weight: 800; color: #f59e0b; line-height: 1.2;">$0
+                    </div>
+                </div>
+            </div>
+
+            <!-- Global Trade Feed -->
+            <div class="glass-panel" style="margin-top: 2rem; padding: 2rem; border-radius: 16px; background: #0b0d17;">
+                <h3
+                    style="font-size: 1.2rem; color: #fff; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1rem;">
+                    Live Global Trade Feed
+                </h3>
+
+                <div style="overflow-x: auto;">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Student Email</th>
+                                <th>Date</th>
+                                <th>Pair</th>
+                                <th>Side</th>
+                                <th>Entry</th>
+                                <th>Result</th>
+                                <th>P&L</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminFeedBody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+
+                    <div id="emptyAdmin" style="text-align: center; padding: 3rem; color: #64748b; display: none;">
+                        No student trades logged in the system yet.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tbody = document.getElementById('adminFeedBody');
+            const emptyAdmin = document.getElementById('emptyAdmin');
+
+            let allTrades = [];
+            let uniqueStudents = new Set();
+            let globalWins = 0;
+            let globalLosses = 0;
+            let globalPnl = 0;
+
+            // Iterate over localStorage to find all journals
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+
+                if (key.startsWith('tradeblitz_journal_')) {
+                    const studentEmail = key.replace('tradeblitz_journal_', '');
+                    uniqueStudents.add(studentEmail);
+
+                    try {
+                        const userTrades = JSON.parse(localStorage.getItem(key));
+                        if (Array.isArray(userTrades)) {
+                            userTrades.forEach(t => {
+                                t.studentEmail = studentEmail; // tag with student
+                                allTrades.push(t);
+                            });
+                        }
+                    } catch (e) { console.error('Error parsing trades for', key); }
+                } else if (key === 'tradeblitz_journal') {
+                    // Legacy general journal
+                    uniqueStudents.add('Legacy User');
+                    try {
+                        const oldTrades = JSON.parse(localStorage.getItem(key));
+                        if (Array.isArray(oldTrades)) {
+                            oldTrades.forEach(t => {
+                                t.studentEmail = 'Legacy User';
+                                allTrades.push(t);
+                            });
+                        }
+                    } catch (e) { }
+                }
+            }
+
+            // Sort trades by date (newest first)
+            allTrades.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+            // Populate KPIs
+            document.getElementById('statStudents').innerText = uniqueStudents.size;
+            document.getElementById('statTrades').innerText = allTrades.length;
+
+            if (allTrades.length === 0) {
+                emptyAdmin.style.display = 'block';
+                return;
+            }
+
+            // Process stats and Feed
+            allTrades.forEach(trade => {
+                // Calculate Pnl
+                let pnlNum = parseFloat(trade.pnl);
+                if (isNaN(pnlNum) || pnlNum === 0) {
+                    let rr = parseFloat(trade.rr);
+                    pnlNum = (!isNaN(rr) && rr > 0) ? (rr * 100) : 100;
+                }
+
+                if (trade.result === 'WIN') {
+                    globalWins++;
+                    globalPnl += Math.abs(pnlNum);
+                } else if (trade.result === 'LOSS') {
+                    globalLosses++;
+                    globalPnl -= Math.abs(pnlNum);
+                }
+
+                // Append to Table
+                let resultBadge = '';
+                if (trade.result === 'WIN') resultBadge = '<span class="badge-win">WIN</span>';
+                else if (trade.result === 'LOSS') resultBadge = '<span class="badge-loss">LOSS</span>';
+                else resultBadge = '<span class="badge-be">B/E</span>';
+
+                let sideColor = trade.side === 'LONG' ? '#10b981' : '#ef4444';
+
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td style="font-weight: 600; color: #3b82f6;">${trade.studentEmail}</td>
+                    <td>${trade.date}</td>
+                    <td style="font-weight: 700; color: #fff;">${trade.pair}</td>
+                    <td style="color: ${sideColor}; font-weight: bold;">${trade.side}</td>
+                    <td>${trade.entryPrice || 'MKT'}</td>
+                    <td>${resultBadge}</td>
+                    <td style="font-weight:bold; color: ${trade.result === 'LOSS' ? '#ef4444' : '#10b981'}">
+                        ${trade.result === 'LOSS' ? '-' : '+'}$${Math.abs(pnlNum).toFixed(2)}
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            // Finalize KPIs
+            const winRate = allTrades.length > 0 ? ((globalWins / allTrades.length) * 100).toFixed(1) : 0;
+            document.getElementById('statWinRate').innerText = `${winRate}%`;
+
+            const pnlEl = document.getElementById('statPnl');
+            if (globalPnl >= 0) {
+                pnlEl.innerText = `+$${globalPnl.toFixed(2)}`;
+                pnlEl.style.color = '#10b981';
+            } else {
+                pnlEl.innerText = `-$${Math.abs(globalPnl).toFixed(2)}`;
+                pnlEl.style.color = '#ef4444';
+            }
+        });
+    </script>
+
+    <!-- Ambient BGM Player -->
+    <audio id="bgmAudio" loop preload="auto">
+        <source src="background.mp3" type="audio/mpeg">
+    </audio>
+    <button id="bgmToggle" title="Toggle Ambient Music" style="position: fixed; bottom: 20px; left: 20px; z-index: 9999; background: rgba(11, 13, 23, 0.8); border: 1px solid rgba(255,255,255,0.1); padding: 12px; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(10px); transition: 0.3s; color: #64748b;">
+        <svg id="bgmIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line id="muteLine1" x1="23" y1="9" x2="17" y2="15"></line>
+            <line id="muteLine2" x1="17" y1="9" x2="23" y2="15"></line>
+        </svg>
+    </button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const audio = document.getElementById("bgmAudio");
+            const toggleBtn = document.getElementById("bgmToggle");
+            const icon = document.getElementById("bgmIcon");
+            
+            audio.volume = 0.4; // Default half volume
+
+            // Restore time & play state across pages
+            const savedTime = localStorage.getItem("tradeblitz_bgm_time");
+            const isPlaying = localStorage.getItem("tradeblitz_bgm_playing") === "true";
+            
+            if (savedTime) audio.currentTime = parseFloat(savedTime);
+
+            function setPlayingUI() {
+                icon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>';
+                toggleBtn.style.color = "#10b981";
+                toggleBtn.style.borderColor = "rgba(16, 185, 129, 0.3)";
+                toggleBtn.style.boxShadow = "0 0 10px rgba(16, 185, 129, 0.2)";
+            }
+            
+            function setMutedUI() {
+                icon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line>';
+                toggleBtn.style.color = "#ef4444";
+                toggleBtn.style.borderColor = "rgba(239, 68, 68, 0.3)";
+                toggleBtn.style.boxShadow = "none";
+            }
+
+            if (isPlaying) {
+                // Browsers might block this, but we try
+                audio.play().then(() => setPlayingUI()).catch(e => setMutedUI());
+            } else {
+                setMutedUI();
+            }
+            
+            // Save time continuously so jumping pages feels seamless
+            setInterval(() => {
+                if (!audio.paused) {
+                    localStorage.setItem("tradeblitz_bgm_time", audio.currentTime);
+                }
+            }, 1000);
+            
+            toggleBtn.addEventListener("click", () => {
+                if (audio.paused) {
+                    audio.play();
+                    setPlayingUI();
+                    localStorage.setItem("tradeblitz_bgm_playing", "true");
+                } else {
+                    audio.pause();
+                    setMutedUI();
+                    localStorage.setItem("tradeblitz_bgm_playing", "false");
+                }
+            });
+            
+            // Try playing anyway on first interaction if they left it playing
+            document.body.addEventListener("click", () => {
+                if (localStorage.getItem("tradeblitz_bgm_playing") === "true" && audio.paused) {
+                    audio.play();
+                    setPlayingUI();
+                }
+            }, { once: true });
+        });
+    </script>
+</body>
+
+</html>
